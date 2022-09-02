@@ -19,8 +19,11 @@ body{
 
 .cabecalho{
     display: flex;
-    justify-content: space-between;
-    padding: 2%;
+    justify-content: center;
+    margin: 10px;
+    padding: 1%;
+    
+
 }
 
 .cabecalho h1{
@@ -60,7 +63,8 @@ body{
 }
 
 .input h6{
-    border: 5%;
+    
+    border: 10%;
     margin: 2%;
 
 }
@@ -76,7 +80,7 @@ body{
     box-shadow: none;
     border-radius: 20px;
     resize: none;
-    outline: 0;
+    margin-right: 800px;
     padding: 10px;
     
 }
