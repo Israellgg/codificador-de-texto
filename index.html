@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="/images/icons8-particular-2-16.png" type="image/x-icon">
+    
+</head>
+
+<body>
+
+    <main class="maincontainer">
+        <header class="cabecalho">
+
+            <img src="/images/iconeAlura.png" alt="logo alura">
+            <h1>Mensagens Codificadas</h1>
+        </header>
+        <div class="container-input">
+            <section class="input">
+                <textarea  id="input-texto" placeholder="Digite seu texto aqui..."></textarea>
+                <h6>Digite apenas letras maiusculas e sem acento.</h6>
+                <div class="buttons">
+                    <div class="container-bnt">
+                       <button class="criptografar" onclick="btnCriptografar()">
+                            Criptografar
+                        </button>
+                       <button class="descriptografar" onclick="btnDesencriptar()" >
+                            Descriptografar
+                        </button>
+                    </div>
+                   
+                </div>
+            </section>
+
+
+            <section id="output">
+                <textarea id="output-texto"></textarea>
+               
+            </section>
+       </div>
+
+        
+    </main>
+
+    <footer class="rodape">
+        <div class="icons">
+        <a href="https://www.linkedin.com/in/israel-fernandes-dev/"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href=""><ion-icon name="logo-github"></ion-icon></a>
+        </div>
+        <h3>Desenvolvido por Israel Fernandes</h3>
+     </footer>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
