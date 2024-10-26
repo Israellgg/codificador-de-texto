@@ -1,47 +1,40 @@
-const inputTexto = document.querySelector("#input-texto");
-const mensagem = document.querySelector("#output-texto");
+let inputTexto = document.querySelector("#input-texto");
 
-function btnCriptografar(){
-        const textoExcriptado = encriptar(inputTexto.value)
-        mensagem.value = textoExcriptado;
-        
-}
+function btnCriptografar() {
+    const texto = inputTexto.value;
+    const resultadoCripto = texto
+        .replaceAll("e", "enter")
+        .replaceAll("i", "imes")
+        .replaceAll("a", "ai")
+        .replaceAll("o", "ober")
+        .replaceAll("u", "ufat");
 
-// A letra "e" é convertida para "enter"
-// A letra "i" é convertida para "imes"
-// A letra "a" é convertida para "ai"
-// A letra "o" é convertida para "ober"
-// A letra "u" é convertida para "ufat"
-
-
-
-function encriptar (stringEncriptada){
-    let matrizCodigo = [['e', 'enter'],['i','imes'],['a','ai'],['o','ober'], ['u','ufat']];
-    stringEncriptada = stringEncriptada.toLowerCase();
-
-    for( let i = 0; i< matrizCodigo.length; i++){
-        if(stringEncriptada.includes(matrizCodigo[i][0])){
-            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo [i][1])
-        }
-        
-    }
-    return stringEncriptada;
+    document.getElementById('output').innerHTML = `
+        <textarea id="output-texto">${resultadoCripto}</textarea>
+        <button onclick="copiar()" class="container-bnts" id="copiar">Copiar</button>
+    `;
+    inputTexto.value = "";
 }
 
 function btnDesencriptar (){
-    const textoDesencriptado = desencriptar(inputTexto.value)
-    mensagem.value = textoDesencriptado
+    const texto = inputTexto.value;
+    const resultadoCripto = texto
+        .replaceAll("enter", "e")
+        .replaceAll("imes", "i")
+        .replaceAll("ai", "a")
+        .replaceAll("ober", "o")
+        .replaceAll("ufat", "u");
+
+    document.getElementById('output').innerHTML = `
+        <textarea id="output-texto">${resultadoCripto}</textarea>
+        <button onclick="copiar()" class="container-bnts" id="copiar">Copiar</button>
+    `; 
+    inputTexto.value = "";
 }
 
-function desencriptar (stringDesencriptada){
-    let matrizCodigo = [['e', 'enter'],['i','imes'],['a','ai'],['o','ober'], ['u','ufat']];
-    stringDesencriptada = stringDesencriptada.toLowerCase();
+function copiar(){
+    const textocop = document.getElementById('output-texto');
 
-    for( let i = 0; i< matrizCodigo.length; i++){
-        if(stringDesencriptada.includes(matrizCodigo[i][1])){
-            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo [i][0])
-        }
-        
-    }
-    return stringDesencriptada;
+    textocop.select();
+    document.execCommand('copy');
 }
